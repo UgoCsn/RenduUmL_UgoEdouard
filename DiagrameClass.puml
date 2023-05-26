@@ -1,0 +1,43 @@
+@startuml
+
+class Dossier <<entity>>{
+
+    - id : Int
+    + nomFicher : String
+}
+
+class Vehicule <<entity>> {
+
+    - id : Int
+    + years : int
+    + couleur : String
+}
+
+class Modele <<entity>> {
+
+    - id : int
+    + label : string
+    + marque : string
+}
+
+class Pree <<entity>> {
+
+    - id : int
+    + label : string
+    + description : string
+    + Vehicule : int
+
+    + VPaint()
+    + VPart()
+}
+
+
+Dossier "0..1" -- "1" Vehicule
+Vehicule "0..*" -- "1" Modele
+Pree "1" -right- "1" Vehicule
+
+@enduml
+
+
+
+
